@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload and Live Stream</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Upload an Image or Start a Live Stream</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Choose an image to upload:</label>
+                <input type="file" class="form-control-file" id="file" name="file" accept="image/*" onchange="previewImage(event)">
+            </div>
+            <button type="submit" class="btn btn-primary">Upload Image</button>
+        </form>
+        <div class="mt-3">
+            <h2>Image Preview:</h2>
+            <img id="imagePreview" src="" alt="Image Preview" class="img-fluid" style="max-height: 300px;">
+        </div>
+        <div class="mt-5">
+            <a href="/live" class="btn btn-secondary">Start Live Stream</a>
+        </div>
+    </div>
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('imagePreview');
+                output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>

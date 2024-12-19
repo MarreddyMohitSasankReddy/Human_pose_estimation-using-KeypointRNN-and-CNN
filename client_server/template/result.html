@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Result</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Original Image:</h3>
+                <img src="{{ original_image }}" alt="Original Image" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h3>Predicted Image:</h3>
+                <img src="{{ predict_image }}" alt="Predicted Image" class="img-fluid">
+            </div>
+        </div>
+        <div class="mt-3">
+            <a href="/" class="btn btn-primary">Upload Another Image</a>
+            <a href="/live" class="btn btn-secondary">Start Live Stream</a>
+        </div>
+    </div>
+</body>
+</html>
